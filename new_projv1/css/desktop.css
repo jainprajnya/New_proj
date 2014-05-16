@@ -1,0 +1,189 @@
+#header-toolbar-div {
+  text-align: right;
+background-color: #f5f5dc;
+  line-height: 26px;
+  font-size: 12px;
+}
+
+ul.header_toolbar li{
+  display:inline;
+  list-style: none;
+  text-align: right;
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+#footer_menus
+{
+  background-color: #f5f5dc;
+border-bottom-style:  dotted;
+float: left;
+width: 68%;
+margin-right: 2%;
+
+}
+
+.float-left {
+  background-color: #f5f5dc;
+float:left;
+width:25%; // or 33% for equal width independent of parent width
+}
+
+#footer-social-list {
+  background-color: #f5f5dc;
+width: 24%;
+float: right;
+}
+#footer-social-list li {
+  background-color: #f5f5dc;
+float: left;
+margin-right: 5%;
+list-style: none outside none;
+}
+#msg
+{
+  font-size: 25px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+background-image:url('../images/logo.jpg');*/
+  
+}
+
+#statics-param
+{
+   margin: 30;
+  padding: 15;
+ /* height: 480px;
+  width: 200px;*/
+background-color: Gray;
+}
+
+#title-start-tracking {
+margin: 0;
+font-size: 26px;
+height: 100%;
+height: 64px;
+line-height: 64px;
+font-family: proxima_novasemibold, Arial, Helvetica, sans-serif;
+width: 70%;
+float: left;
+line-height: normal;
+white-space: nowrap;
+}
+
+.btn-signup-now {
+float: right;
+border-radius: 2px 2px 2px 2px;
+color: #FFFFFF;
+cursor: pointer;
+display: block;
+font-size: 18px;
+text-transform: uppercase;
+width: 26%;
+padding: 20px 0;
+text-align: center;
+vertical-align: top;
+display: block;
+background-color: #00AA03;
+white-space: nowrap;
+}
+
+#home-icons
+{
+
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#signup-text
+{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+#footer
+{
+
+  text-align: center;
+  padding-top: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+/*position: absolute;*/
+
+}
+
+#logo
+{
+height: 100px;
+width: 200px;
+}
+
+#header h1
+{
+	text-align: left;
+    margin:0;
+    padding:0;
+    padding-left:7px;
+    display:inline;
+}
+td
+{
+padding:15px;
+}
+
+.left_pannel_elem:hover {
+background-color: #f5f5dc;
+color: #000000;
+}
+
+ul#menu
+{
+  font-size: 30px;
+    width:85%;
+    float: right;
+    display:inline;
+    margin: 0;
+    text-align: right;
+}
+
+ul#menu li
+{
+   padding-left: 20px;
+    padding-right: 20px;
+display: inline;
+list-style: none;
+}
+
+ul#performance_param li {
+ list-style-type: none;
+  padding-left: 1em;
+  text-indent: -1em;
+}
+li:before {
+  padding-right: 5px;
+}
+
+body {
+	/*background-image:url('../images/logo.jpg');*/
+	
+font-size: 18px;
+line-height: 24px;
+font-weight: normal;
+font-style: normal;
+font-family: proxima_nova_rgregular, Arial, Helvetica, sans-serif;
+}
+/* Remove Block Separators if System Output is disabled */
+/*#header + #bottom-a:before,
+#top-a + #bottom-a:before,
+#top-b + #bottom-a:before { display: none; }
+
+/* Footer + Header */
+#toolbar,
+#toolbar a,
+#headerbar,
+#footer { color: #777; }
+#headerbar a,
+#footer a { color: #bbb; }
+#toolbar a:hover,
+#headerbar a:hover,
+#footer a:hover { color: #fff; }
