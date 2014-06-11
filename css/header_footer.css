@@ -1,0 +1,125 @@
+
+
+#header h1
+{
+  color: black;
+  text-align: left;
+    /*margin:0;*/
+    padding-top:0;
+    padding-left:0px;
+    display:inline;
+
+}
+
+.wrapper{
+  height:24px;
+  margin: 0px;
+background: #a90329; /* Old browsers */
+background: -moz-linear-gradient(top,  #a90329 45%, #6d0019 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(45%,#a90329), color-stop(100%,#6d0019)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #a90329 45%,#6d0019 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #a90329 45%,#6d0019 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #a90329 45%,#6d0019 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #a90329 45%,#6d0019 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
+
+
+}
+
+#header-toolbar-div {
+  /*padding: 5px 0;*/
+ 
+  width: 100%;
+  text-align: right;
+  /*line-height: 26px;*/
+  font-size: 18px;
+  /*margin-bottom: 10px;*/
+  color: black;  
+  height: 50px;
+ padding-bottom: 10px;
+ 
+  /*margin-top: -10;*/
+}
+
+ul.header_toolbar li{
+  color: black;
+  display:inline;
+  list-style: none;
+  text-align: right;
+  padding-left: 1em;
+  padding-right: 1em;
+  text-indent: -1em;
+}
+
+.float-left {
+  color: black;
+ 
+float:left;
+width:25%; // or 33% for equal width independent of parent width
+}
+
+
+#footer
+{
+  
+  color: black;
+  /*text-align: left;*/
+}
+
+#footer_menus
+{
+  color: black;
+  /*background-color: rgb(192,0,0);*/
+border-bottom-style:  dotted;
+
+float: left;
+width: 68%;
+/*margin-right: 0%;*/
+
+}
+
+#footer-social-list {
+width: 32%;
+float: right;
+color: black;
+margin-right: 0%;
+font-family: myFirstFont;
+}
+#contect-with-us
+{  
+text-align: center;
+color: black;
+font-family: myFirstFont;
+}
+#footer-social-list ul li {
+float: right;
+padding-right: 25px;
+list-style: none outside none;
+color: black;
+font-family: myFirstFont;
+}
+
+#footer-social-list #copyright-info{
+float: left;
+text-align: center;
+width: 100%;
+color: black;
+font-family: myFirstFont;  
+}
+
+
+#toolbar,
+#toolbar a {color: black;} 
+li.welcome a.level1 {color: black;} 
+#headerbar,
+#footer { color: black; background-color: rgb(192,0,0);  }
+#headerbar a,
+#footer a { color: black; }
+#toolbar a:hover,
+#headerbar a:hover,
+#footer a:hover { color: #999; }
+#footer-social-list a{color:black; font-family: myFirstFont;}
+#footer-social-list a:hover{color: blue; font-family: myFirstFont;}
+#footer_menus a{color:black;}
+#footer_menus a:hover{color: blue;}
+footer a {color: black;}
