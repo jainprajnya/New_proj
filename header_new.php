@@ -8,8 +8,8 @@
                         <span class="icon-bar"></span>
             </button>
              <div class="navbar-brand">
-                <a class="logo hidden-sm" href="/"><img src="/static/site/images/logo.png"></a>
-                <a class="logo visible-sm" href="/"><img src="/static/site/images/logo_tablet.png"></a>
+                <a class="logo hidden-sm" href="/"><img src=""></a>
+                <a class="logo visible-sm" href="/"><img src=""></a>
             </div>
         </div>
 
@@ -19,7 +19,7 @@
                         
 
                 <li class="sibling">
-                    <a href="Statistics.php"><span class="hover-bg"></span>Statistics</a>
+                    <a href="index_new.php"><span class="hover-bg"></span>Statistics</a>
                 </li>
 
                 <li class="sibling">
@@ -40,10 +40,10 @@
                         Follow
                     </a>
                     <ul class="social-icons top">       
-                        <li><a target="_blank" class="icon facebook" href="https://www.facebook.com/Designeers.ch"><span>Facebook</span></a></li>
-                        <li><a target="_blank" class="icon twitter" href="https://twitter.com/DesigneersCH"><span>Twitter</span></a></li>
-                        <li><a target="_blank" class="icon linked" href="http://www.linkedin.com/company/designeers-gmbh"><span>Linked in</span></a></li>
-                        <li><a target="_blank" class="icon google" href="https://plus.google.com/b/104680152934221270403"><span>Google+</span></a></li>
+                        <li><a target="_blank" class="icon facebook" href="https://www.facebook.com/"><span>Facebook</span></a></li>
+                        <li><a target="_blank" class="icon twitter" href="https://twitter.com/"><span>Twitter</span></a></li>
+                        <li><a target="_blank" class="icon linked" href="http://www.linkedin.com/"><span>Linked in</span></a></li>
+                        <li><a target="_blank" class="icon google" href="https://plus.google.com/"><span>Google+</span></a></li>
                         <div class="break10"></div>
                     </ul>
                 </li>

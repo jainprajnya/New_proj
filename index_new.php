@@ -9,18 +9,23 @@
 <link href="css/header_new.css" rel="stylesheet" type="text/css">
 <link href="css/footer_new.css" rel="stylesheet" type="text/css">
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,700' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Oswald:300,700' rel='stylesheet' type='text/css'>
+<!-- <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,700' rel='stylesheet' type='text/css'> -->
+<!-- <link href='http://fonts.googleapis.com/css?family=Oswald:300,700' rel='stylesheet' type='text/css'> -->
 
 <!-- <link href="css/base.css" rel="stylesheet" type="text/css">
 <link href="css/layout.css" rel="stylesheet" type="text/css"> -->
 <script type="text/javascript" src="js/jquery-1.7.1.min.js" ></script>
 <script type="text/javascript" src="js/highcharts.js" ></script>
 <script type="text/javascript" src="js/function.js" ></script>
+<script src="js/themes/gray.js"></script>
 <!-- <script type="text/javascript" src="js/themes/gray.js"></script> -->
+<!-- <script src="http://code.highcharts.com/highcharts.js"></script> -->
+<script type="text/javascript" src="js/highcharts-more.js"></script>
+<!-- <script type="text/javascript" src="js/modules/exporting.js"></script> -->
+<!-- <script type="text/javascript" src="js/modules/exporting.src.js"></script> -->
+<!-- <script src="http://code.highcharts.com/modules/solid-gauge.src.js"></script> -->
 
-<script type="text/javascript">
-</script>
+
 </head>
 <!-- <div id="container"> -->
 <?php include("header_new.php"); ?>
@@ -30,6 +35,7 @@
 	<div id="wrapper" class="wrapper">
 		<div class="content-wrapper">
 
+<?php include("dasboard.php"); ?>
 <?php include("body_new.php"); ?>
 
 
