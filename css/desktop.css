@@ -1,66 +1,58 @@
-#header-toolbar-div {
-  text-align: right;
-background-color: #f5f5dc;
-  line-height: 26px;
-  font-size: 12px;
-}
-
-ul.header_toolbar li{
-  display:inline;
-  list-style: none;
-  text-align: right;
-  padding-left: 1em;
-  text-indent: -1em;
-}
-
-#footer_menus
+.my_gradient_grey
 {
-  background-color: #f5f5dc;
-border-bottom-style:  dotted;
-float: left;
-width: 68%;
-margin-right: 2%;
+  width: 100%;
+  /*height: 100px;*/
+
+  padding-bottom: 10px ;
+  padding-top: 10px;
+  margin-top: 0px;
+ 
+background: #e2e2e2; /* Old browsers 
+background: -moz-linear-gradient(left,  #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#e2e2e2), color-stop(50%,#dbdbdb), color-stop(51%,#d1d1d1), color-stop(100%,#fefefe)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%); /* IE10+ */
+background: linear-gradient(to right,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=1 ); /* IE6-9 */
 
 }
 
-.float-left {
-  background-color: #f5f5dc;
-float:left;
-width:25%; // or 33% for equal width independent of parent width
-}
-
-#footer-social-list {
-  background-color: #f5f5dc;
-width: 24%;
-float: right;
-}
-#footer-social-list li {
-  background-color: #f5f5dc;
-float: left;
-margin-right: 5%;
-list-style: none outside none;
-}
-#msg
+#top_pannel_div li:hover
 {
-  font-size: 25px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  text-align: center;
-background-image:url('../images/logo.jpg');*/
-  
-}
+color: black;
+background-color: rgb(192,0,0);
+color: #000000;
 
-#statics-param
+}
+.container
 {
-   margin: 30;
-  padding: 15;
- /* height: 480px;
-  width: 200px;*/
-background-color: Gray;
+width: 100%;
+height: 75%;
+margin: -10px -10px -10px -10px;
+}
+.cell_with_border{
+border: solid;
+margin: 0px 0px 0px 0px;
+}
+.my_gradient_red
+{
+  width: 100%;
+
+   background: #a90329; /* Old browsers */
+background: -moz-linear-gradient(top,  #a90329 45%, #6d0019 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(45%,#a90329), color-stop(100%,#6d0019)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #a90329 45%,#6d0019 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #a90329 45%,#6d0019 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #a90329 45%,#6d0019 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #a90329 45%,#6d0019 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
+
 }
 
-#title-start-tracking {
-margin: 0;
+#getting_started_txt
+{
+  margin: 0;
 font-size: 26px;
 height: 100%;
 height: 64px;
@@ -72,45 +64,120 @@ line-height: normal;
 white-space: nowrap;
 }
 
-.btn-signup-now {
+.top_panel{
+
+  /*float: right;*/
+}
+#summay_table{
+  margin-top: 50px;
+}
+#summary{
+  height: 25%;
+}
+#msg
+{
+  font-size: 25px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+  color: black;
+background-image:url('../images/logo.jpg');*/
+  
+}
+#block_started
+{
+  width: 100%;
+  height: 100px;
+  padding: 5px 5px 15px 15px;
+
+  margin: 15px;
+}
+
+.timeline{
+  float: left;
+border-radius: 1px 1px 1px 1px;
+cursor: pointer;
+display: block;
+font-size: 12px;
+text-transform: uppercase;
+/*padding: 5px 5px 5px 5px;*/
+text-align: center;
+vertical-align: top;
+display: block;
+white-space: nowrap;
+color: black;
+}
+#dummy_row{
+   width: 25%;
+}
+
+#timeline_btn{
+  margin-top:30px;
+  float: center;
+  width: 15%;
+}
+#period{
+width: 60%;
 float: right;
-border-radius: 2px 2px 2px 2px;
-color: #FFFFFF;
+}
+#statics-param
+{
+   margin: 30;
+  padding: 15;
+ /* height: 480px;
+  width: 200px;*/
+background-color: Gray;
+}
+@font-face
+{
+font-family: 'myFirstFont';
+/*src: url("/Library/Fonts/Corsiva.ttf");*/
+src: local('/Library/Fonts/Corsiva.ttf') format('truetype');
+}
+#title-start-tracking {
+margin: 0;
+font-size: 26px;
+color: black;
+height: 100%;
+height: 64px;
+line-height: 64px;
+width: 70%;
+float: left;
+line-height: normal;
+white-space: nowrap;
+}
+
+#getting_started_btn {
+float: right;
+border-radius: 1px 1px 1px 1px;
 cursor: pointer;
 display: block;
 font-size: 18px;
 text-transform: uppercase;
-width: 26%;
-padding: 20px 0;
+width: 20%;
+padding: 15px 0;
+margin-right: 15px;
 text-align: center;
 vertical-align: top;
 display: block;
-background-color: #00AA03;
 white-space: nowrap;
+color: black;
 }
 
 #home-icons
 {
-
+  color: black;
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
 #signup-text
 {
+  color: black;
   padding-top: 50px;
   padding-bottom: 50px;
 }
-#footer
-{
 
-  text-align: center;
-  padding-top: 100px;
-  padding-left: 50px;
-  padding-right: 50px;
-/*position: absolute;*/
-
-}
 
 #logo
 {
@@ -118,26 +185,32 @@ height: 100px;
 width: 200px;
 }
 
-#header h1
-{
-	text-align: left;
-    margin:0;
-    padding:0;
-    padding-left:7px;
-    display:inline;
-}
 td
 {
 padding:15px;
+font-family: 'myFirstFont';
+}
+#body_table{
+
+    width: 100%;
+}
+#left_pannel{
+
+  width: 25%;
 }
 
+#data{
+   width: 75%;
+}
 .left_pannel_elem:hover {
-background-color: #f5f5dc;
+  color: black;
+background-color: rgb(192,0,0);
 color: #000000;
 }
 
 ul#menu
 {
+  color: black;
   font-size: 30px;
     width:85%;
     float: right;
@@ -148,6 +221,7 @@ ul#menu
 
 ul#menu li
 {
+  color: black;
    padding-left: 20px;
     padding-right: 20px;
 display: inline;
@@ -155,6 +229,7 @@ list-style: none;
 }
 
 ul#performance_param li {
+  color: black;
  list-style-type: none;
   padding-left: 1em;
   text-indent: -1em;
@@ -165,12 +240,17 @@ li:before {
 
 body {
 	/*background-image:url('../images/logo.jpg');*/
-	
+	color: black;
 font-size: 18px;
 line-height: 24px;
 font-weight: normal;
 font-style: normal;
-font-family: proxima_nova_rgregular, Arial, Helvetica, sans-serif;
+font-family: myFirstFont;
+width: 100%;
+height: 100%;
+position: relative;
+
+/*margin-top: -1;*/
 }
 /* Remove Block Separators if System Output is disabled */
 /*#header + #bottom-a:before,
@@ -178,12 +258,3 @@ font-family: proxima_nova_rgregular, Arial, Helvetica, sans-serif;
 #top-b + #bottom-a:before { display: none; }
 
 /* Footer + Header */
-#toolbar,
-#toolbar a,
-#headerbar,
-#footer { color: #777; }
-#headerbar a,
-#footer a { color: #bbb; }
-#toolbar a:hover,
-#headerbar a:hover,
-#footer a:hover { color: #fff; }
