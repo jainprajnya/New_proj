@@ -6,11 +6,12 @@ var graph_type;
  var hash_obj={};
  var response;
  var applyFilter=[];
+ response_d={}
 	var options = {
 					chart: {
 						type: 'column',
 						renderTo:'container_data',
-						 // backgroundColor: '#3fbf8c'
+						 // backgroundColor: '#30D5C8'
 							},
 						title: {
 							text:''
@@ -57,13 +58,26 @@ var graph_type;
   
 			$(document).ready(function() {
 
-				var e = document.getElementById('circle1');
+
 				// console.dir(e);
 				var host = 'http://localhost:8080/feedback-review';
 				var graph_c = '/company';
 				var company_id = '/1';
 				var params ='/graphs?callback=?'
 				var uri='';
+				var dashboard_stats = $.ajax({
+					  url: uri.concat(host,graph_c,company_id,"/dashboard?callback=?"),
+			          dataType: 'jsonp',
+			          type: 'GET',
+			          cache: false,
+			          jsonp: 'handle_data',
+			          crossDomain:true,
+			          async:false,
+					  success: function(response){
+					  	response_d=response;
+					  	dashboard_details('today');
+					  }
+				});
 				var response1= $.ajax({
 			          url: uri.concat(host,graph_c,company_id,params),
 			          dataType: 'jsonp',
@@ -102,168 +116,6 @@ var graph_type;
 						collect_stats_populate_graph(this.id,response[params_index]["attributeList"],response[params_index]["filterList"],applyFilter);
 
 				});
-
-
-				    $('#net_promoter').highcharts({
-	
-	    chart: {
-	        type: 'gauge',
-	        plotBackgroundColor: '#3fbf8c',
-	        plotBackgroundImage: null,
-	        plotBorderWidth: 0,
-	        plotShadow: false,
-	        backgroundColor: '#3fbf8c'
-	    },
-	    
-	    title: {
-	        text: 'Net Promoter Score'
-	    },
-	    
-	    pane: {
-	        startAngle: -150,
-	        endAngle: 150
-	    },
-	       
-	    // the value axis
-	    yAxis: {
-	        min: 0,
-	        max: 100,
-	        
-	        minorTickInterval: 'auto',
-	        minorTickWidth: 1,
-	        minorTickLength: 10,
-	        minorTickPosition: 'outside',
-	        minorTickColor: '#666',
-	
-	        tickPixelInterval: 25,
-	        tickWidth: 2,
-	        tickPosition: 'ouside',
-	        tickLength: 10,
-	        tickColor: '#666',
-	        labels: {
-	            step: 2,
-	            rotation: 'auto'
-	        },
-	        title: {
-	            text: ''
-	        },
-	        plotBands: [{
-	            from: 0,
-	            to: 25,
-	            color: '#55BF3B' // green
-	        }, {
-	            from: 25,
-	            to: 75,
-	            color: '#DDDF0D' // yellow
-	        }, {
-	            from: 75,
-	            to: 100,
-	            color: '#DF5353' // red
-	        }]        
-	    },
-	
-	    series: [{
-	        name: 'NPS',
-	        data: [40],
-	        tooltip: {
-	            valueSuffix: ''
-	        }
-	    }]
-	
-	} );
-
-var gaugeOptions = {
-	
-	    chart: {
-	        type: 'solidgauge',
-	        backgroundColor: '#3fbf8c',
-	        style: {
-            fontFamily: 'serif',
-            fontSize: 18
-        	}
-	    },
-	    
-	    title: null,
-	    
-	    pane: {
-	    	center: ['50%', '85%'],
-	    	size: '100%',
-	        startAngle: -90,
-	        endAngle: 90,
-            background: {
-                backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || '#EEE',
-                innerRadius: '60%',
-                outerRadius: '100%',
-                shape: 'arc'
-            }
-	    },
-
-	    tooltip: {
-	    	enabled: false
-	    },
-	       
-	    // the value axis
-	    yAxis: {
-			stops: [
-				[0.1, '#55BF3B'], // green
-	        	[0.5, '#DDDF0D'], // yellow
-	        	[0.9, '#DF5353'] // red
-			],
-			lineWidth: 0,
-            minorTickInterval: null,
-            tickPixelInterval: 400,
-            tickWidth: 0,
-	        title: {
-                y: -95
-	        },
-            labels: {
-                y: 10
-            }        
-	    },
-        
-        plotOptions: {
-            solidgauge: {
-                dataLabels: {
-                    y: 5,
-                    borderWidth: 0,
-                    useHTML: true
-                }
-            }
-        }
-    };
-    
-    // The speed gauge
-    $('#avg_rating').highcharts(Highcharts.merge(gaugeOptions, {
-        yAxis: {
-	        min: 0,
-	        max: 5,
-	        title: {
-	            text: 'Rating'
-	        }       
-	    },
-
-	    credits: {
-	    	enabled: false
-	    },
-	
-	    series: [{
-	        name: 'Rating',
-	        data: [3.5],
-	        dataLabels: {
-	        	format: '<div style="text-align:center"><span style="font-size:25px;color:' + 
-                    ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' + 
-                   	'<span style="font-size:12px;color:silver"></span></div>'
-	        },
-	        tooltip: {
-	            valueSuffix: ''
-	        }
-	    }]
-	
-	}));
-    
-
-
-
 		});
 			function make_graph_with_filters(){
 				applyFilter=[];
@@ -278,11 +130,22 @@ var gaugeOptions = {
 				var rows='';
 				for(var i=0;i<response.length;i++)
 					{
-						rows+='<a class="top_pannel fancy-font" id='+response[i]["graphId"]+' name='+response[i]["name"]+'>'+response[i]["name"]+'</a>';
+						rows+='<a class="top_pannel fancy-font" style="float: center;" id='+response[i]["graphId"]+' name='+response[i]["name"]+'>'+response[i]["name"]+'</a>';
 						if (response[i]["name"]=="overview"){overview_index=i;}
 					}
-					
-					$('div#left_pannel').append(rows);			
+					rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake1" name="fake11"> Fake1</a>';
+					rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake2" name="fake12"> Fake2</a>';
+					// rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake3" name="fake13"> Fake3</a>';
+					// rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake4" name="fake14"> Fake4</a>';
+					// rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake5" name="fake15"> Fake5</a>';
+					// rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake6" name="fake16"> Fake6</a>';
+					// rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake7" name="fake17"> Fake7</a>';
+					// rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake8" name="fake18"> Fake8</a>';
+					// rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake9" name="fake19"> Fake9</a>';
+					// rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake10" name="fake110"> Fake10</a>';
+					// rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake11" name="fake111"> Fake11</a>';
+					// rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake12" name="fake112"> Fake12</a>';
+					$('div.top_pannel_div').append(rows);			
 			}
 
 			function plot_graph(main_graph)
@@ -310,7 +173,7 @@ var gaugeOptions = {
 						graphsValues={};
 					 	var response11;
 					 	filters_g='';
-					 	console.log("in stats"+applyFilter);
+					 	// console.log("in stats"+applyFilter);
 					 	for(var i=0;i< applyFilter.length;i++)
 					 	{
 					 		filters_g+=applyFilter[i]+"="+applyFilter[i+1]+"&";
@@ -331,7 +194,7 @@ var gaugeOptions = {
 							        // console.log("query to  graph id "+ graph_id+" : ");
 							         response11=pass;
 							         var graphsValues= '';
-							          // console.log(response11);
+							          console.log(response11);
 							        
 									make_graph_obj(response11,attributeList,filterList,hash_obj);
 									if(graph_type=="normal")
@@ -397,7 +260,7 @@ var gaugeOptions = {
 								category_ids.push(parseInt(attr_id));  	
 						  }
 						}
-
+						console.log(category_ids);
 						if(category_ids.length!=0)
 						{
 						if(graph_type=="normal")	
@@ -417,7 +280,7 @@ var gaugeOptions = {
 							
 							for(var i in series_data)
 							{
-								series_data[i]["data"].push(hash_obj[id]["count_of_ppl"][i]);
+								series_data[i]["data"].push(hash_obj[category_ids[id]]["count_of_ppl"][i]);
 							}
 						}
 						options.series=series_data;
@@ -630,8 +493,7 @@ var gaugeOptions = {
 					function makeSubGraph(whose_subgraph)
 					{
 
-						var child_found=-1;
-						var my_id=-1;
+						console.log(whose_subgraph);
 						for(id in hash_obj)
 						{
 
@@ -639,6 +501,7 @@ var gaugeOptions = {
 								parent_id=id;
 							}
 						}
+						console.log(parent_id);
 						setQuickLink(whose_subgraph);
 						if (graph_type=="normal")
 							set_data_of_series_normal(hash_obj,parent_id,"listCountPPl_7Days",hash_obj);
@@ -733,6 +596,35 @@ var gaugeOptions = {
 							}
 						}
 					}
+
+					function dashboard_details(stats_period)
+					{
+						console.log(response_d);
+						if(stats_period =="today")
+						{
+						document.getElementById('avg_rating').innerHTML=response_d.avgRating;
+					  	document.getElementById('feedbacks').innerHTML=response_d.countResponsesToday ;
+					  	document.getElementById('nps').innerHTML=5 ;
+					  	document.getElementById('positive').innerHTML='<span style="float:left; margin-left: 10px">positives</span><span>' + response_d.countResponsesPositiveToday+'</span><span><img src="/images/plus.png" style="height: 20px;width: 20px;float: right;margin-right: 10px;"></img></span>';
+					  	document.getElementById('negative').innerHTML='<span style="float:left; margin-left: 10px">negatives</span><span >' + response_d.countResponsesNegativeToday+'</span><span><img src="/images/minus.png" style="height: 20px;width: 20px;float: right;margin-right: 10px;"></img></span>';
+					  	document.getElementById('neutral').innerHTML='<span style="float:left; margin-left: 10px">neutral</span><span style="float:center;">'+ (response_d.countResponsesToday-(response_d.countResponsesPositiveToday+response_d.countResponsesNegativeToday))+'</span><span><img src="/images/plus_minus.jpeg" style="height: 20px;width: 20px;margin-right: 10px;float: right;"></img></span>';
+					  	document.getElementById('promoters').innerHTML='<span style="float:left; margin-left: 10px">promoters</span><span>'  + response_d.npsPositive+'</span><span><img src="/images/like_thumnail.png" style="height: 20px;width: 20px;float: right;margin-right: 10px;"></img></span>';
+					  	document.getElementById('detractors').innerHTML='<span style="float:left; margin-left: 10px">detractors</span><span>' + response_d.npsNegative+'</span><span><img src="/images/dislike_thumnail.png" style="height: 20px;width: 20px;float: right;margin-right: 10px;"></img></span>';
+					  	document.getElementById('passive').innerHTML ='<span style="float:left; margin-left: 10px">passive</span><span>' + (response_d.countResponsesToday- (response_d.npsPositive+response_d.npsNegative))+'</span><span><img src="/images/neutral_thumbnail.png" style="height: 20px;width: 20px;margin-right: 10px;float: right;"></img></span>';
+						}
+						else
+						{
+						document.getElementById('avg_rating').innerHTML=response_d.avgRating;
+					  	document.getElementById('feedbacks').innerHTML=response_d.countResponsesTotal ;
+					  	document.getElementById('nps').innerHTML=5 ;
+					  	document.getElementById('positive').innerHTML='<span style="float:left; margin-left: 5px">positives</span><span>' + response_d.countResponsesPositiveTotal+'</span><span><img src="/images/plus.png" style="height: 20px;width: 20px;float: right;margin-right: 10px;"></img></span>';
+					  	document.getElementById('negative').innerHTML='<span style="float:left; margin-left: 5px">negatives</span><span>' + response_d.countResponsesNegativeTotal+'</span><span><img src="/images/minus.png" style="height: 20px;width: 20px;float: right;margin-right: 10px;"></img></span>';
+					  	document.getElementById('neutral').innerHTML='<span style="float:left; margin-left: 5px">neutral</span><span style="float:center;">' + (response_d.countResponsesTotal-(response_d.countResponsesPositiveTotal+response_d.countResponsesNegativeTotal))+'</span><span><img src="/images/plus_minus.jpeg" style="height: 20px;margin-right: 10px;width: 20px;float: right;"></img></span>';
+					  	document.getElementById('promoters').innerHTML='<span style="float:left; margin-left: 5px">promoters</span><span>' + response_d.npsPositive+'</span><span><img src="/images/like_thumnail.png" style="height: 20px;width: 20px;float: right;margin-right: 10px;"></img></span>';
+					  	document.getElementById('detractors').innerHTML='<span style="float:left; margin-left: 5px">detractors</span><span>' + response_d.npsNegative+'</span><span><img src="/images/dislike_thumnail.png" style="height: 20px;width: 20px;float: right;margin-right: 10px;"></img></span>';
+					  	document.getElementById('passive').innerHTML ='<span style="float:left; margin-left: 5px">passive</span><span>' + (response_d.countResponsesTotal- (response_d.npsPositive+response_d.npsNegative))+'</span><span><img src="/images/neutral_thumbnail.png" style="height: 20px;width: 20px;margin-right: 10px;float: right;"></img></span>';
+						}
+					}
 					$('a.back_link').live('click',function(){
 						var to_b_removed = document.getElementById("quick_links").childNodes.length - 2;
 						for(var i=0;i< to_b_removed;i++)
@@ -774,6 +666,34 @@ var gaugeOptions = {
 						
 					});
 
+					$('a.dashboard_heading').live('click', function(){
+						elements = document.getElementsByClassName('dashboard_heading');
+						    for (var i = 0; i < elements.length; i++) {
+						        elements[i].style.backgroundColor="#CCCCCC";
+						        elements[i].style.borderBottom="";
+						    }
+						    this.style.backgroundColor="black";
+
+						    this.style.marginBottom ="5px" ;
+						    this.style.borderBottom ="solid 5px #30D5C8";
+						    dashboard_details(this.id);
+					});
+
+					$('a#dashboard_close').live('click',function(){
+						if (this.innerHTML=='hide')
+						{
+						document.getElementById('dashboard').style.display="none";
+						document.getElementsByClassName('opaque')[0].style.height='90px';
+						this.innerHTML='show';
+						}
+						else if(this.innerHTML='show'){
+							document.getElementsByClassName('opaque')[0].style.height='400px';
+						document.getElementById('dashboard').style.display="block";
+						this.innerHTML='hide';
+						}
+					});
+
+		
 
 
 					

@@ -1,39 +1,40 @@
-<div class="opaque">   
-<div id="avg_rating"></div> 
-<div id="net_promoter">
-    <table class="net_promoter_table">
-        <tr><th style="text-align: center; font-size: 24px; padding: 10px 10px;">NPS</th></tr>
-        <tr><td style="text-align: center; font-size: 24px; padding: 10px 10px;"><canvas id="rect4"></canvas></tr>
-    </table>
+<div class="opaque"> 
+    <div id="dashboard_pannel_head"> 
+        <div id="dashboard_head">
+        <a id="dashboard_text" style="text-decoration: none; color: white;"> Dashboard</a>
+        <a id="dashboard_close" href="#" style=" float: right;color: white;"> hide </a>
+        </div>
+    </div>
+    <div id="dashboard">
+    <div id="dashboard_details_heading">
+        <a id="today" class="dashboard_heading" style="background-color: black; margin-bottom: 5px; border-bottom: solid 5px #30D5C8;"> Today</a>
+        <a id="overall" class="dashboard_heading"> Overall </a>
+    </div> 
+    <div id="dashboard_details">
+        <table id="dashboard_statistics">
+            <tr><th class="dashboard_table_heading" style="background-color: #30C6D5;">Net Promoter Score</th>
+                <th class="dashboard_table_heading" style="background-color: #30ABD5;">Number of Feedback</th>
+                <th class="dashboard_table_heading" style="background-color: #30D5AC ;">Average Rating</th>
+            </tr>
+            <tr><td id="nps" style="background-color: #30C6D5; padding: 10px;"></td>
+                <td id="feedbacks" style="background-color: #30ABD5; padding: 10px;"></td>
+                <td id="avg_rating" style="background-color: #30D5AC ; padding: 10px;"></td>
+            </tr>
+            <tr><td id="promoters" class="dashboard_detail_data"></td>
+                <td id="positive" class="dashboard_detail_data"></td>
+                 <td ></td>
+            </tr>
+            <tr><td id="detractors" class="dashboard_detail_data"></td>
+                <td id="negative" class="dashboard_detail_data"></td>
+                <td ></td>
+            </tr>
+            <tr><td id="passive" class="dashboard_detail_data"></td>
+                <td id="neutral" class="dashboard_detail_data"></td>
+                <td ></td>
+            </tr>
+        </table>
+    </div>
 </div>
-<div id="nps_parameters">
-<table class="nps_params_table">
-    <tr><td >Promoters</td>
-        <td><canvas id="rect1"> 10 </canvas></td>
-    </tr>
-    <tr><td >Detractors</td>
-        <td><canvas id="rect2"> 20 </canvas></td>
-    </tr>
-    <tr> <td>passive</td>
-        <td><canvas id="rect3"> 40 </canvas></td>
-    </tr>
-    </table>
+</div>
 
-</div>
-<div id="stats_summary_overall">
-    <table id="stats_overall">
-        <tr><th style="padding: 10px 80px;">Overall</th></tr>
-        <tr><td style=" padding: 10px 80px;">ABC</td></tr>
-        <tr><td style=" padding: 10px 80px;">XYZ</td></tr>
-    </table>
-</div>
-<div id="stats_summary_today">
-    <table id="stats_today">
-        <tr><th style="padding: 10px 80px;">Today</th></tr>
-        <tr><td style="padding: 10px 80px;">PQR</td></tr>
-        <tr><td style="padding: 10px 80px;">LMO</td></tr>
-    </table>
-</div>
 
-</div>
-<div id="dummy_div" style="height: 80px; width:100%;background-color: white; display: hidden;"></div>

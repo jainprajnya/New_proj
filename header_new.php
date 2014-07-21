@@ -8,8 +8,8 @@
                         <span class="icon-bar"></span>
             </button>
              <div class="navbar-brand">
-                <a class="logo hidden-sm" href="/"><img src=""></a>
-                <a class="logo visible-sm" href="/"><img src=""></a>
+                <a  href="/"><img src=""></a>
+                <a  href="/" style="color: white;">BIZVIEWZ</a>
             </div>
         </div>
 
@@ -23,11 +23,19 @@
                 </li>
 
                 <li class="sibling">
-                    <a href="Profile.php"><span class="hover-bg"></span>Profile</a>
+                    <a href="analysis.php"><span class="hover-bg"></span>Analysis</a>
                 </li>
 
                 <li class="sibling">
-                    <a href="about.php"><span class="hover-bg"></span>About</a>
+                    <a href="marketing.php"><span class="hover-bg"></span>Marketing</a>
+                </li>
+
+                <!-- <li class="sibling">
+                    <a href="about.php"><span class="hover-bg"></span>Comments</a>
+                </li> -->
+
+                <li class="sibling">
+                    <a href="Profile.php"><span class="hover-bg"></span>Profile</a>
                 </li>
 
                 <li class="sibling">
@@ -37,23 +45,10 @@
                 <li class="hidden-xs follow">
                     <a href="#">
                         <span class="hover-bg"></span>
-                        Follow
+                        Sign out
                     </a>
-                    <ul class="social-icons top">       
-                        <li><a target="_blank" class="icon facebook" href="https://www.facebook.com/"><span>Facebook</span></a></li>
-                        <li><a target="_blank" class="icon twitter" href="https://twitter.com/"><span>Twitter</span></a></li>
-                        <li><a target="_blank" class="icon linked" href="http://www.linkedin.com/"><span>Linked in</span></a></li>
-                        <li><a target="_blank" class="icon google" href="https://plus.google.com/"><span>Google+</span></a></li>
-                        <div class="break10"></div>
-                    </ul>
                 </li>
             </ul>
         </div>
     </nav>
-            
-    <a href="/de" class="language fancy-font">
-        <span class="hidden-xs">Deutsch</span>
-        <span class="visible-xs">De</span>
-    </a>
-
  </header>
