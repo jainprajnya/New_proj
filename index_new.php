@@ -23,7 +23,7 @@
 <script type="text/javascript" src="js/highcharts-more.js"></script>
 <!-- <script type="text/javascript" src="js/modules/exporting.js"></script> -->
 <!-- <script type="text/javascript" src="js/modules/exporting.src.js"></script> -->
-<!-- <script src="http://code.highcharts.com/modules/solid-gauge.src.js"></script> -->
+<script src="http://code.highcharts.com/modules/solid-gauge.src.js"></script>
 
 
 </head>

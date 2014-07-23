@@ -177,8 +177,8 @@ optgroup {
   font-weight: bold;
 }
 table {
-  border-spacing: 0;
-  border-collapse: collapse;
+  border-spacing: 3px gray;
+  /*border-collapse: collapse;*/
 }
 td,
 th {
@@ -285,7 +285,6 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #428bca;
   text-decoration: none;
 }
 a:hover,
@@ -1397,13 +1396,13 @@ pre code {
     margin-left: 0;
   }
 }
-table {
-  max-width: 100%;
-  background-color: transparent;
-}
-th {
-  text-align: left;
-}
+/*table {*/
+  /*max-width: 100%;*/
+  /*background-color: transparent;*/
+/*}*/
+/*th {*/
+  /*text-align: left;*/
+/*}*/
 .table {
   width: 100%;
   margin-bottom: 20px;
@@ -3736,6 +3735,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
   float: left;
   height: 50px;
+  margin-left: 150px;
   padding: 15px 15px;
   font-size: 18px;
   line-height: 20px;

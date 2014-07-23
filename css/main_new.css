@@ -1,8 +1,128 @@
 /* ==========================================================
+    Dashboard
+   ========================================================== */
+.opaque{
+
+    height: 400px;
+    width: 100%;
+    /*background-color: #30D5C8;*/
+    /*opacity: 0;*/
+
+}
+.opaque #dashboard_pannel_head{
+    position: relative;
+    top: 50px;
+    height: 40px;
+    background-color: #484848;
+    text-align: center;
+    cursor: pointer;
+
+
+}
+.opaque #dashboard_pannel_head a{
+    padding-bottom: 5px;
+}
+.opaque #dashboard_pannel_head #dashboard_head{
+    top: 60px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    font-size: 18px;
+    cursor: pointer;
+
+}
+
+.dashboard_heading{
+    background-color: #CCCCCC;
+}
+
+.opaque #dashboard_details_heading{
+    position: relative;
+    top: 60px;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+.opaque #dashboard_details_heading a{
+    padding-left: 114px;
+    padding-right: 114px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    color: white;
+     box-shadow: 5px 5px 5px #888888;
+     text-decoration: none;
+     cursor: pointer;
+}
+#dashboard_close{
+
+    left: 530px;
+}
+table#dashboard_statistics{
+     float: center;
+      text-align: center;
+}
+.dashboard_table_heading{
+padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /*text-decoration-style:solid;*/
+    margin-bottom: 5px;
+    border-bottom: solid 5px gray;
+      /*padding-bottom: 3px;*/
+
+
+}
+.dashboard_detail_data{
+ padding-top: 10px;
+    padding-bottom: 10px;
+     background: -webkit-linear-gradient(#F0F0F0, #E8E8E8); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#F0F0F0, #E8E8E8); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#F0F0F0, #E8E8E8); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#F0F0F0, #E8E8E8); /* Standard syntax */
+ box-shadow: 2px 2px 2px #888888
+}
+.opaque #dashboard_details {
+    position: relative;
+    top: 70px;
+    left: 430px;
+   
+   
+}
+
+.arrow-down {
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    
+    border-top: 20px solid #f00;
+}
+
+
+#rect1, #rect2, #rect3 {
+    width: 55px;
+    height: 35px;
+    background: #30D5C8;
+    /*-moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    margin-right: 20px;*/
+    color: black;
+
+}
+
+
+/* ==========================================================
     Defaults
    ========================================================== */
 #body_table{
-    width: 100%;F 
+    width: 100%;
 }
 .highcharts-background{
      /*background-color: #30D5C8;*/
@@ -12,129 +132,8 @@ ul.style_dropdown{
    overflow: auto;
 
 }
-.opaque{
 
-    height: 250px;
-    width: 100%;
-    /*background-color: #30D5C8;*/
-    /*opacity: 0;*/
 
-}
-#rect1, #rect2, #rect3 {
-    width: 60px;
-    height: 40px;
-    background: #30D5C8;
-    /*-moz-border-radius: 30px;
-    -webkit-border-radius: 30px;
-    border-radius: 30px;
-    margin-right: 20px;*/
-    color: black;
-
-}
-
-#rect4{
-    width: 80px;
-    height: 70px;
-    background: #30D5C8;
-    /*-moz-border-radius: 30px;
-    -webkit-border-radius: 30px;
-    border-radius: 30px;
-    margin-right: 20px;*/
-    color: black;
-}
-
-#circle3{
-     width: 70px;
-    height: 70px;
-    background: #c4c71c;
-    -moz-border-radius: 35px;
-    -webkit-border-radius: 35px;
-    border-radius: 35px;
-    margin-right: 70px;
-    margin-left: 70px;
-}
-.opaque #nps_parameters{
-position: relative;
-    left: 300px;
-    top: -150px;
-    float:left;
-    left: 360px;
-    width: 350px; 
-    /*height: 210px; */
-    margin: 0 ;
-    /*background-color:  #30D5C8;*/
-
-}
-table.nps_params_table {
-    text-align: center;
-    /*background-color: #30D5C8;*/
-    color: black;    
-    margin: 30px;
-}
-
-table.net_promoter_table{
-    text-align: center;
-    /*background-color: #30D5C8;*/
-    color: black;    
-    margin: 30px;
-}
-
-.nps_params_table tr,td{
-    color: black;  
-    border: 5px solid white;
-}
-.opaque #stats_summary_overall{
-position: relative;
-    left: 560px;
-    top: -140px;
-    float:left;
-    left: 360px;
-    width: 200px; 
-    /*height: 210px; */
-    margin: 0 ;
-    /*background-color:  #30D5C8;*/
-    
-
-}
-
-.opaque #stats_summary_today{
-position: relative;
-    left: 800px;
-    top: -140px;
-    float:left;
-    left: 360px;
-    width: 200px; 
-    /*height: 210px; */
-    margin: 0 ;
-    /*background-color:  #30D5C8;*/
-    
-
-}
-.opaque #stats_summary_overall th,td{
-    /*left: 260px;*/
-    text-align: center;
-    
-}
-.opaque #avg_rating{
-    position: relative;
-    left: 40px;
-    top: 50px;
-    width: 200px; 
-
-    height: 210px; 
-    margin: 0 ;
-    /*background-color:  #30D5C8;*/
-}
-.opaque #net_promoter{
-    position: relative;
-    left: 260px;
-    top: -160px;
-    float:left;
-    width: 200px; 
-    height: 210px; 
-    margin: 0;
-    /*background-color:  #30D5C8;*/
-}
 .blog .container #body_table #filters {
     min-height: 200px;
     margin-left: 10px;
@@ -190,7 +189,7 @@ text-align: center;
 .questions_list_main{
    overflow-y:auto;  
    list-style: none;
-   height: 25px;
+   /*height: 25px;*/
    border: 2px solid #30D5C8;
 }
 li.questions_list{
@@ -199,7 +198,7 @@ li.questions_list{
 color: white;
 list-style-type: none;
 padding: 5px 5px;
-background: black;
+/*background: black;*/
 width: 200px;
 max-height: 200px;
 visibility: hidden;
@@ -860,8 +859,8 @@ a:hover {
     -webkit-font-smoothing: antialiased;
 }
 .top-bar .main-menu > li > a > span.hover-bg {
-    /*background: url(../images/menu_hover_bg.png) no-repeat bottom center;*/
-    background: url(../images/menu_hover_bg_dark.jpg) no-repeat bottom center;
+    background: url(../images/new_pic.png) no-repeat bottom center;
+    /*background: url(../images/menu_hover_bg_dark.jpg) no-repeat bottom center;*/
     display: block;
     position: absolute;
     width: 100%;
@@ -870,13 +869,14 @@ a:hover {
     left: 0;
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
-    opacity: 1;
+    opacity: 0;
     -webkit-transition: all .30s ease-in;
     -moz-transition: all .30s ease-in;
     -o-transition: all .30s ease-in;
     -ms-transition: all .30s ease-in;
     transition: all .30s ease-in;
     z-index: -1;
+
 }
 .top-bar .main-menu > li.follow > a > span.hover-bg {
     -webkit-transition: all .20s .20s ease-in;
@@ -889,7 +889,7 @@ a:hover {
 .top-bar .main-menu > li:focus > a,
 .top-bar .main-menu > li.selected > a,
 .top-bar .main-menu > li.ancestor > a {
-    color: #fff;
+    color: #f5f5f5;
 
     -webkit-transition: color .15s ease-out;
     -moz-transition: color .15s ease-out;
@@ -1389,7 +1389,8 @@ a:hover {
 }
 
 .footer {
-    margin-top: 30px;
+    /*margin-top: 30px;*/
+    background-color: white;
 }
 .footer-block {
     position: relative;
@@ -2005,21 +2006,25 @@ a:hover {
     Blog
    ========================================================== */
 
-.blog {    background-color: #30D5C8;}
+.blog {   
+ /*background-color: #30D5C8;*/
+}
 .blog .post.animate_in {
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
     opacity: 0;
 }
 .blog .container{
-    background: #30D5C8;
- background-color: #30D5C8;
+    /*background: #30D5C8;
+ background-color: #30D5C8;*/
  width: 100%;
+
 }
-.blog  .blog-header .container{
+.blog  .blog-header {
     background-color: black;
     max-height: 40px;
     padding: 5px 5px;
+     
 }
 .blog .blog-header {
     background: #000;
@@ -2031,13 +2036,17 @@ a:hover {
     margin: 0;
     margin-right: 15px;
 }
-.blog .blog-header #left_panel a{
+
+.blog .blog-header .top_pannel_div
+{
     margin-left: 20px;
     padding-right: 10px;
     padding-left: 10px;
- text-align: center;
+    text-align: center;
+    /*max-width: 60%;*/
     }
-.blog .blog-header a {
+
+.blog .blog-header .top_pannel_div a {
     color: #fff;
     font-size: 20px;
     font-size: 19px;
@@ -2045,6 +2054,7 @@ a:hover {
     margin-right: 20px;
     text-align: center;
     text-transform: uppercase;
+    /*float: left;*/
 }
 .blog .blog-header a:hover,
 .blog .blog-header a.active {

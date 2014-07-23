@@ -2,10 +2,10 @@
         <div class="blog">
 
             <div class="blog-header">
-                <div class="container">
-                    <div id='left_pannel'>
+                
+                    <div class='top_pannel_div'>
                     </div>                    
-                </div>
+                
             </div>
             <div class="container">
                 <div id="body_table">
