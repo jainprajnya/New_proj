@@ -1,6 +1,16 @@
 <div class="content">
         <div class="blog">
 
+            <nav id="sectionNav" class="clip visible" style="opacity: 1;">
+        <ol class="list"><li data-seek-index="0" data-seek-time="0" title="Home" class="">
+            <span class="label">Home</span><span class="dot" data-nav-item="true">
+            <span class="inner" data-nav-item="true"></span></span></li>
+            <li data-seek-index="1" data-seek-time="1" title="Intro" class="active">
+                <span class="label">Intro</span><span class="dot" data-nav-item="true">
+                <span class="inner" data-nav-item="true"></span></span></li>
+</ol>
+        <input class="range" type="range" min="0" max="15" step="1">
+    </nav>
             <div class="blog-header">
                 
                     <div class='top_pannel_div'>
@@ -9,26 +19,18 @@
             </div>
             <div class="container">
                 <div id="body_table">
-                        
-                        <div id="filters" class="graph_filters">
-                            <div id="basic_filter" class="fif">
-                                <ul class="style_dropdown">  
-                                    <li class="branch_list_first" name="select_branch" >Select Branch</li>
-                                    <li class="branch_list" ><a class="branch_list_1" name="branch" id="Kormangala">Kormangala</a></li>                                    
+                        <table id="graph_filters_table">
+                            <tr id="filter_row"><td>
+                                <ul class="filter_dropdown_style"> 
+                                    <li class="filter_list_name" name="select_branch" >Timeline</li>
+                                    <li class="filter_list_elements" ><input type="radio" class="filter_list_input timeline" name="time_filter" id="week" checked="checked">&nbsp;&nbsp;Last one week </input></li>
+                                    <li class="filter_list_elements" ><input type="radio" class="filter_list_input timeline" name="time_filter" id="month">&nbsp;&nbsp;Last one month</input></li>
+                                    <li class="filter_list_elements" ><input type="radio" class="filter_list_input timeline" name="time_filter" id="year">&nbsp;&nbsp;Last one year</input></li>                                    
                                 </ul>
-
-                            </div>
-
-                        </div>
-
-                        <div id="dummy_row" style="height: 50px;"></div>
-                        <div id="quick_links"><a id="-2" class="back_link" href="index_new.php">Home</a></div>
-                        <div id="timeline_btn">            
-                            <button id="daily" class="timeline">last 1 week</button>
-                            <button id="weekly" class="timeline" >last 1 month</button>
-                            <button id="monthly" class="timeline">last 1 year</button>          
-                            <div id="period"></div>
-                        </div>            
+                                </td></tr>
+                        </table>
+                        <div id="quick_links"><a id="-2" class="back_link" href="index_new.php">Home</a></div>        
+                            <div id="period"></div>          
                         
                     
                     <div id="data" >

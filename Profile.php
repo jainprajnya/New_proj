@@ -18,7 +18,7 @@
 <script type="text/javascript" src="js/jquery-1.7.1.min.js" ></script>
 <script type="text/javascript" src="js/highcharts.js" ></script>
 <script type="text/javascript" src="js/highcharts-more.js"></script>
-<script type="text/javascript" src="js/dashboard.js" ></script>
+<script type="text/javascript" src="js/profile.js" ></script>
 <!-- <script type="text/javascript" src="js/themes/gray.js"></script> -->
 <script src="http://code.highcharts.com/modules/solid-gauge.src.js"></script>
 

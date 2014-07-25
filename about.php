@@ -28,7 +28,7 @@
 
     <div id="wrapper" class="wrapper">
         <div class="content-wrapper">
-
+<?php include("dasboard.php"); ?>
 <?php include("body_about.php"); ?>
 
 

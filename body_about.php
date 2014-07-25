@@ -20,10 +20,6 @@
                
             </div>
 
-            <a class="show-more fancy-font" href="#">
-                Show more
-            </a>
-
             <div class="container">                
                 <div class="back-to-top-container">
                     <a style="display: none !important;" href="#top" class="back-to-top fancy-font"><span>Back to top</span></a>

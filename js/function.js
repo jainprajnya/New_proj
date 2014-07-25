@@ -89,7 +89,7 @@ var graph_type;
 			          success: function( response_g ) {
 						response=response_g;
 					    renderLayout(response);
-					    console.log(response);
+					    // console.log(response);
 				        overview_graph = response[overview_index];
 				        graph_id=overview_graph["graphId"];
 				        graph_type=overview_graph["type"];
@@ -101,7 +101,7 @@ var graph_type;
 				        plot_graph(response[overview_index]);
     			}	
 			});
-				$('a.branch_list_1').live('click',function (){
+				$('a.filter_list_input').live('click',function (){
 								addFilter(this.id,this.name);
 								make_graph_with_filters();
 					});
@@ -133,8 +133,8 @@ var graph_type;
 						rows+='<a class="top_pannel fancy-font" style="float: center;" id='+response[i]["graphId"]+' name='+response[i]["name"]+'>'+response[i]["name"]+'</a>';
 						if (response[i]["name"]=="overview"){overview_index=i;}
 					}
-					rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake1" name="fake11"> Fake1</a>';
-					rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake2" name="fake12"> Fake2</a>';
+				// 	rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake1" name="fake11"> Fake1</a>';
+				// 	rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake2" name="fake12"> Fake2</a>';
 					// rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake3" name="fake13"> Fake3</a>';
 					// rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake4" name="fake14"> Fake4</a>';
 					// rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake5" name="fake15"> Fake5</a>';
@@ -145,7 +145,7 @@ var graph_type;
 					// rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake10" name="fake110"> Fake10</a>';
 					// rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake11" name="fake111"> Fake11</a>';
 					// rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake12" name="fake112"> Fake12</a>';
-					$('div.top_pannel_div').append(rows);			
+					// $('div.top_pannel_div').append(rows);			
 			}
 
 			function plot_graph(main_graph)
@@ -194,7 +194,7 @@ var graph_type;
 							        // console.log("query to  graph id "+ graph_id+" : ");
 							         response11=pass;
 							         var graphsValues= '';
-							          console.log(response11);
+							          // console.log(response11);
 							        
 									make_graph_obj(response11,attributeList,filterList,hash_obj);
 									if(graph_type=="normal")
@@ -260,7 +260,7 @@ var graph_type;
 								category_ids.push(parseInt(attr_id));  	
 						  }
 						}
-						console.log(category_ids);
+						// console.log(category_ids);
 						if(category_ids.length!=0)
 						{
 						if(graph_type=="normal")	
@@ -419,28 +419,37 @@ var graph_type;
 					}
 
 					function populate_filter(filterList){
-						var filter = document.getElementById("other_filters");
+						console.log(filterList);
+						a = [{"a" : 1}]
+						filterList = [{"type":"non-weighted","attributeString":"sex","parentId": -1,"attributeId":3,"attributeValues":[{"name":"male","value":1,"maxValue":-1},{"name":"female","value":2,"maxValue":-1}]},
+{"type":"non-weighted","attributeString":"branch","parentId":-1,"attributeId":3,"attributeValues":[{"name":"a","value":1,"maxValue":-1},{"name":"b","value":2,"maxValue":-1},{"name":"c","value":1,"maxValue":-1}]},
+{"type":"non-weighted","attributeString":"city","parentId":-1,"attributeId":3,"attributeValues":[{"name":"male","a1":1,"maxValue":-1},{"name":"b1","value":2,"maxValue":-1}]}];
+						var row = document.getElementById("filter_row");
 						var filters='';
 
 						for(var i in filterList)
 						{
-							filters+=' <ul class="style_dropdown"><li class="branch_list_first">'+filterList[i]["attributeString"]+'</li>';
+							filters+='<td><ul class="filter_dropdown_style"><li class="filter_list_name">'+filterList[i]["attributeString"]+'</li><li class="filter_list_elements" >select ( <a> all </a> | <a>reset</a> )</li>';
 							for(var j in filterList[i]["attributeValues"])
-								{filters+='<li class="branch_list"><a class="branch_list_1" name='+filterList[i]["attributeString"]+' id='+filterList[i]["attributeValues"][j]["name"]+'>'+filterList[i]["attributeValues"][j]["name"]+'</a></li>';
-						}
-							filters+='</ul>';
+								{
+									filters+='<li class="filter_list_elements"><input type="checkbox" class="filter_list_input" name='+filterList[i]["attributeString"]+' id='+filterList[i]["attributeValues"][j]["name"]+'>&nbsp;&nbsp;'+filterList[i]["attributeValues"][j]["name"]+'</input></li>';
+								}
+							filters+='</ul></td>';
+							var x = row.insertCell(-1);
+							x.innerHTML=filters;
+							filters='';
 						}
 						
-						$('div#basic_filter').append(filters);
 						
-						$('a.branch_list_1').live('mouseover',function(){
+						
+						$('a.filter_list_input').live('mouseover',function(){
 							
-							if(document.getElementById(this.id).className === "branch_list_1")
+							if(document.getElementById(this.id).className === "filter_list_input")
 							{
 								this.style.backgroundColor = "red";
 							}
 						});
-						$('a.branch_list_1').live('mouseout',function(){
+						$('a.filter_list_input').live('mouseout',function(){
 								this.style.backgroundColor = "black";
 						});
 				
@@ -449,15 +458,15 @@ var graph_type;
     					// alert(this.value);
 					});
 
-					$('.style_dropdown').live('click',function(){
-						var elements= this.children;
-						for (var i = 0; i < elements.length; i++) {
-						        elements[i].style.visibility="visible";
+					$('.filter_list_name').live('click',function(){
+						var elements= this.parentNode.children;
+						for (var i = 1; i < elements.length; i++) {
+						        elements[i].style.visibility=elements[i].style.visibility=="visible"?"hidden":"visible";
 						    }
 
 					});
 
-					$('.branch_list').live('click',function(){
+					$('.filter_list_elements').live('click',function(){
 
 
 					});
@@ -599,7 +608,7 @@ var graph_type;
 
 					function dashboard_details(stats_period)
 					{
-						console.log(response_d);
+						// console.log(response_d);
 						if(stats_period =="today")
 						{
 						document.getElementById('avg_rating').innerHTML=response_d.avgRating;
@@ -653,15 +662,15 @@ var graph_type;
 						this.style.backgroundColor="#c4c71c";
 						if(graph_type=="normal")
 						{
-						if(this.id=="daily"){set_data_of_series_normal(hash_obj,-1,"listCountPPl_7Days",null);set_date("listCountPPl_7Days");}
-						else if(this.id=="weekly"){set_data_of_series_normal(hash_obj,-1,"listCountPPl_30Days",null);set_date("listCountPPl_30Days");}
-						else if(this.id=="monthly"){set_data_of_series_normal(hash_obj,-1,"listCountPPl_365Days",null);set_date("listCountPPl_365Days");}
+						if(this.id=="week"){set_data_of_series_normal(hash_obj,-1,"listCountPPl_7Days",null);set_date("listCountPPl_7Days");}
+						else if(this.id=="month"){set_data_of_series_normal(hash_obj,-1,"listCountPPl_30Days",null);set_date("listCountPPl_30Days");}
+						else if(this.id=="year"){set_data_of_series_normal(hash_obj,-1,"listCountPPl_365Days",null);set_date("listCountPPl_365Days");}
 						}
 						else if(graph_type=="trend")
 						{
-						if(this.id=="daily"){set_data_of_series_trends(hash_obj,-1,"listDailyAttributeStatisticValues",7);set_date("listCountPPl_7Days");}
-						else if(this.id=="weekly"){set_data_of_series_trends(hash_obj,-1,"listDailyAttributeStatisticValues",30);set_date("listCountPPl_30Days");}
-						else if(this.id=="monthly"){set_data_of_series_trends(hash_obj,-1,"listMonthlyAttributeLevelStatisticValues",365);set_date("listCountPPl_365Days");}
+						if(this.id=="week"){set_data_of_series_trends(hash_obj,-1,"listDailyAttributeStatisticValues",7);set_date("listCountPPl_7Days");}
+						else if(this.id=="month"){set_data_of_series_trends(hash_obj,-1,"listDailyAttributeStatisticValues",30);set_date("listCountPPl_30Days");}
+						else if(this.id=="year"){set_data_of_series_trends(hash_obj,-1,"listMonthlyAttributeLevelStatisticValues",365);set_date("listCountPPl_365Days");}
 						}
 						
 					});

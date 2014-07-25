@@ -63,15 +63,17 @@
     left: 530px;
 }
 table#dashboard_statistics{
-     float: center;
-      text-align: center;
+     /*float: center;
+      text-align: center;*/
+   
 }
 .dashboard_table_heading{
-padding-left: 30px;
+    padding-left: 30px;
     padding-right: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
     /*text-decoration-style:solid;*/
+    margin-right: 0;
     margin-bottom: 5px;
     border-bottom: solid 5px gray;
       /*padding-bottom: 3px;*/
@@ -91,6 +93,7 @@ padding-left: 30px;
     position: relative;
     top: 70px;
     left: 430px;
+    display: table;
    
    
 }
@@ -128,58 +131,66 @@ padding-left: 30px;
      /*background-color: #30D5C8;*/
 }
 
-ul.style_dropdown{
-   overflow: auto;
-
+ul.filter_dropdown_style{
+margin-left: 5px;
+padding: 0;
 }
 
-
-.blog .container #body_table #filters {
-    min-height: 200px;
-    margin-left: 10px;
-    margin-top: 15px;
-    font-size: 18px;
-}
-#basic_filter{
-    left: 20px;
-}
-#triangle-down {
+li.filter_list_name:after{
+    content: "";
+    display: block;
+    position: inherit;
     width: 0;
     height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 100px solid red;
+    border: 5px solid transparent;
+    border-top-color: #30D5C8;
+    top: 20px;
+    right: 9px;
 }
 
-.fif{
-display: table-cell;
-float: left;
+#triangle-down {
+    /*width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top-color: #30D5C8;
+    top: 20px;
+    right: 9px;
+    display: block;
+    position: inherit;*/
 }
-/*#other_filters{
-    display: table-cell;
 
-}*/
 
 .display_filters_graph{
 
     padding: 10px 10px;
 }
 
-li.branch_list {
+.filter_list_elements a{
+    color: white;
+}
+#filter_row{
+vertical-align: top;
+    
+max-height: 50px;
+overflow: scroll;
+}
+
+li.filter_list_elements {
     cursor: pointer;
-     margin-left: 5px;
  visibility:hidden;
 color: white;
 list-style-type: none;
-padding: 5px 5px;
+
 background: black;
-width: 200px;
-max-height: 200px;
 overflow-y:auto; 
-border-top: 1px solid #7DD8D2;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
+    /*box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);*/
+    border-top: 1px solid #7DD8D2;
     font-size: 18px;
-text-align: center;
+padding-left: 10px;
+padding-right: 10px;
+text-align: left;
+
     transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
     -webkit-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
     -moz-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
@@ -208,8 +219,9 @@ border: 2px solid #30D5C8;
     font-size: 18px;
 text-align: center;
 }
-li.branch_list_first {
-     margin-left: 5px;
+.filter_list_input{padding-left: 3px;
+text-align: left; }
+li.filter_list_name {
     /*color: white;
 list-style-type: none;
 padding: 5px 5px;
@@ -221,13 +233,12 @@ list-style-type: none;
     /*visibility: hidden;*/
     /*opacity: 0;*/
     z-index: 50;
-    max-height: 200px;
+    max-height: 100px;
    /* overflow: auto;*/
     background: black;
     border-radius: 4px;
     border-top: 1px solid #7DD8D2;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    width: 200px;
     font-size: 18px;
     padding: 5px 5px;
     color: white;
@@ -239,11 +250,11 @@ list-style-type: none;
     -o-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
 }
 
-.timeline{
+/*.timeline{
     margin: 0px;
     z-index: 50;
     /*max-height: 200px;*/
-    overflow: auto;
+    /*overflow: auto;
     background: black;
     border-radius: 4px;
     border-top: 1px solid #7DD8D2;
@@ -258,7 +269,7 @@ list-style-type: none;
     -moz-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
     -ms-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
     -o-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
-}
+}*/
 
 #period{
      padding: 10px 10px;
@@ -1394,6 +1405,7 @@ a:hover {
 }
 .footer-block {
     position: relative;
+    background-color:  #30D5C8;
 }
 .footer-block .footer-left {
     position: absolute;
@@ -2007,7 +2019,7 @@ a:hover {
    ========================================================== */
 
 .blog {   
- /*background-color: #30D5C8;*/
+ background-color: #30D5C8;
 }
 .blog .post.animate_in {
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";

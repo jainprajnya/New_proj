@@ -6,26 +6,29 @@
 <meta name="viewport" content="width=device-width">
 <title>ABC-XYZ</title>
 <link href="css/desktop.css" rel="stylesheet" type="text/css">
+<link href="css/header_footer.css" rel="stylesheet" type="text/css">
 <!--[if lte IE 8]>
 <script type="text/javascript" src="javascript/html5.js"></script>
 <![endif]-->
 </head>
-<?php include("header.php"); ?>
+<div class="container">
 <body>
+
+
 <div id="main">
-  <header id="header">
-      <h1><a href="#" > <img id="logo" src="images/mybusiness.jpeg" ></img></a></h1>
+  <?php include("header.php"); ?>
+  <header id="header" class="my_gradient_grey">
       <ul id="menu">
-        <li><a href="#">Attribute1</a></li>
-        <li><a href="#">Attribute2</a></li>
-        <li><a href="#">Attribute3</a></li>
-        <li><a href="#">Attribute4</a></li>
-        <li><a href="#">Attribute5</a></li>
+        <li><a href="#">What is Ressurection</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Signup</a></li>
       </ul>
   </header>	
-  <br>
+ 
   	<p id="msg"> NO matter wHAt you OWN ,DOn worry about ANalyTICS</p>
-  	 <?php include("footer.php"); ?>
-</div>
+    <div id="block_started" class="my_gradient_gre"> <?php include("getting_started.php"); ?></div>
+  	 <div id="footer" class="my_gradient_red"><?php include("footer.php"); ?></div>
 </body>
+</div>
 </html>
