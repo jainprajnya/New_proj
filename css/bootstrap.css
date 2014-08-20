@@ -4251,7 +4251,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   cursor: not-allowed;
   background-color: #fff;
 }
-.label {
+/*.label {
   display: inline;
   padding: .2em .6em .3em;
   font-size: 75%;
@@ -4262,7 +4262,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: .25em;
-}
+}*/
 .label[href]:hover,
 .label[href]:focus {
   color: #fff;

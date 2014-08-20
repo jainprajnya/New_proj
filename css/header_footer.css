@@ -83,20 +83,20 @@ width: 32%;
 float: right;
 color: black;
 margin-right: 0%;
-font-family: myFirstFont;
+font-family: 'Roboto Condensed', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 #contect-with-us
 {  
 text-align: center;
 color: black;
-font-family: myFirstFont;
+font-family: 'Roboto Condensed', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 #footer-social-list ul li {
 float: right;
 padding-right: 25px;
 list-style: none outside none;
 color: black;
-font-family: myFirstFont;
+font-family: 'Roboto Condensed', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #footer-social-list #copyright-info{
@@ -104,7 +104,7 @@ float: left;
 text-align: center;
 width: 100%;
 color: black;
-font-family: myFirstFont;  
+font-family: 'Roboto Condensed', "Helvetica Neue", Helvetica, Arial, sans-serif;  
 }
 
 
@@ -118,8 +118,8 @@ li.welcome a.level1 {color: black;}
 #toolbar a:hover,
 #headerbar a:hover,
 #footer a:hover { color: #999; }
-#footer-social-list a{color:black; font-family: myFirstFont;}
-#footer-social-list a:hover{color: blue; font-family: myFirstFont;}
+#footer-social-list a{color:black; font-family: 'Roboto Condensed', "Helvetica Neue", Helvetica, Arial, sans-serif;}
+#footer-social-list a:hover{color: blue; font-family: 'Roboto Condensed', "Helvetica Neue", Helvetica, Arial, sans-serif;}
 #footer_menus a{color:black;}
 #footer_menus a:hover{color: blue;}
 footer a {color: black;}

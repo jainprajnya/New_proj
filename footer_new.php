@@ -27,19 +27,19 @@
             
                 <div class="col-md-2 col-sm-4 col-xs-12 fancy-font footer-input">
                     <p>
-                        Designeers GmbH
+                        BizViewz
                     </p>
                 </div>
             
                 <div class="col-md-2 col-sm-4 col-xs-12 fancy-font footer-input">
                     <p>
-                        Alpenstrasse 11
+                        Building A
                     </p>
                 </div>
             
                 <div class="col-md-2 col-sm-4 col-xs-12 fancy-font footer-input">
                     <p>
-                        6300 Zug, Switzerland    
+                        street B, India    
                     </p>
                 </div>
             
@@ -56,8 +56,8 @@
                 </div>
             
                 <div class="col-md-2 col-sm-4 col-xs-12 fancy-font footer-input">
-                    <a href="mailto:contact@designeers.ch" <="" a="">
-                        contact@designeers.ch
+                    <a href="mailto:contact@bizviewz.com" <="" a="">
+                        contact@bizviewz.com
                     </a>
                 </div>
             
@@ -66,7 +66,7 @@
 
             <div class="row" style="padding: 0 15px;">
                 <div class="fancy-font col-xs-6 fancy-font visible-xs left-text no-padding-right" style="color: #888;">
-                    <p>&nbsp;© DESIGNEERS GmbH 2013</p>
+                    <p>&nbsp;© BizViewZ 2014</p>
 
                 </div>
                 <div class="fancy-font col-xs-6 fancy-font visible-xs right-text no-padding-left" style="color: #888;">

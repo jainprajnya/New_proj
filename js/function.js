@@ -7,6 +7,7 @@ var graph_type;
  var response;
  var applyFilter=[];
  response_d={}
+ var active_div="statistics"
 	var options = {
 					chart: {
 						type: 'column',
@@ -24,12 +25,12 @@ var graph_type;
 					yAxis: {
 						min :0,
 						title: {
-							text: 'Number of people',
-							align:'high'
+							text: 'Number of feedbacks',
+							// align:'left'
 						}
 					},
 					tooltip: {
-                		valueSuffix: ' number of people'
+                		valueSuffix: ' number of feedbacks'
            			 },
            			 plotOptions: {
 			                column: {
@@ -106,7 +107,7 @@ var graph_type;
 								make_graph_with_filters();
 					});
 
-				$('a.top_pannel').live('click',function (){
+				$('.label').live('click',function (){
 
 						var params_index= get_params_index(this.id,response);
 					    applyFilter=[];
@@ -237,7 +238,8 @@ var graph_type;
 						options.xAxis.categories=[];
 						series_data=[];
 						var series_name_array=["POOR","AVG","GOOD"];
-						var color_array=['#D0112A','#CDD011','#41168D'];
+						// var color_array=[];
+						var color_array=['#00B233','#FF7400','#FFCE00'];
 						var child_found=-1;
 						for(var i=0;i<series_name_array.length;i++)
 						{
@@ -429,12 +431,12 @@ var graph_type;
 
 						for(var i in filterList)
 						{
-							filters+='<td><ul class="filter_dropdown_style"><li class="filter_list_name">'+filterList[i]["attributeString"]+'</li><li class="filter_list_elements" >select ( <a> all </a> | <a>reset</a> )</li>';
+							filters+='<td><a class="filter_dropdown_style">'+filterList[i]["attributeString"]+'</a><ul class="filter_dropdown_list" style="visibility: hidden;"> ';
 							for(var j in filterList[i]["attributeValues"])
 								{
 									filters+='<li class="filter_list_elements"><input type="checkbox" class="filter_list_input" name='+filterList[i]["attributeString"]+' id='+filterList[i]["attributeValues"][j]["name"]+'>&nbsp;&nbsp;'+filterList[i]["attributeValues"][j]["name"]+'</input></li>';
 								}
-							filters+='</ul></td>';
+							filters+='<li class="filter_list_elements" ><a style="font-size: 11px; color: blue; float: right;"> clear </a></li></ul></td>';
 							var x = row.insertCell(-1);
 							x.innerHTML=filters;
 							filters='';
@@ -458,10 +460,12 @@ var graph_type;
     					// alert(this.value);
 					});
 
-					$('.filter_list_name').live('click',function(){
+					$('.filter_dropdown_style').live('click',function(){
 						var elements= this.parentNode.children;
-						for (var i = 1; i < elements.length; i++) {
-						        elements[i].style.visibility=elements[i].style.visibility=="visible"?"hidden":"visible";
+						// document.getElementsByClassName("filter_dropdown_list");
+						elements[1].style.visibility=elements[1].style.visibility=="visible"?"hidden":"visible";
+						for (var i = 0; i < elements[1].children.length; i++) {
+						        elements[1].children[i].style.visibility=elements[1].children[i].style.visibility=="visible"?"hidden":"visible";
 						    }
 
 					});
@@ -684,7 +688,7 @@ var graph_type;
 						    this.style.backgroundColor="black";
 
 						    this.style.marginBottom ="5px" ;
-						    this.style.borderBottom ="solid 5px #30D5C8";
+						    this.style.borderBottom ="solid 5px #00d8ff";
 						    dashboard_details(this.id);
 					});
 
@@ -701,6 +705,131 @@ var graph_type;
 						this.innerHTML='hide';
 						}
 					});
+
+					$('a.marketing').live('click', function(){
+						var offers='';
+						header_navigation(this.className);
+						console.log("in offers");
+						show_offers(offers);
+					});
+
+
+					function show_offers(offers){
+						var rows='<form><button class="marketing_btn" type="button">Add New Offer</button><button type="button" class="marketing_btn">Submit</button>'
+						rows+='<table class="marketing_offers">';
+						rows+='<tr>'
+						rows+='<th>Select All</th>';
+						rows+='<th>Category</th>';
+						rows+='<th>Offer Details</th>';
+						rows+='<th>Start Date/Time</th>';
+						rows+='<th>End Date/Time</th>';
+						rows+='<th>Recurrence</th>';
+						rows+='<th>Disable</th>';
+						rows+='</tr>';
+							var host = 'http://localhost:8080/feedback-review';
+				var graph_c = '/company';
+				var company_id = '/1';
+				var params ='/offersAndInfo?callback=?'
+				var uri='';
+						var offers_res = $.ajax({
+					  url: uri.concat(host,graph_c,company_id,"/offersAndInfo?callback=?"),
+			          dataType: 'jsonp',
+			          type: 'GET',
+			          cache: false,
+			          jsonp: 'handle_data',
+			          crossDomain:true,
+			          async:false,
+					  success: function(response){
+					  	offersRes=response;
+					  	for(var i in offersRes){
+					  		console.log(offersRes[i]);
+							rows+='<tr>'
+							rows+='<td class="offers_row"><input type="checkbox">Select</input></td>';
+							rows+='<td class="offers_row">'+offersRes[i]["type"]+'</td>';
+							rows+='<td class="offers_row">'+offersRes[i]["details"]+'</td>';
+							rows+='<td class="offers_row">'+offersRes[i]["start"]+'</td>';
+							rows+='<td class="offers_row">'+offersRes[i]["end"]+'</td>';
+							rows+='<td class="offers_row">'+offersRes[i]["recurrence"]+'</td>';
+							rows+='<td class="offers_row"><img></img></textarea></td>';
+							rows+='</tr>';
+						}
+						rows+='</table>';
+						$('div#body_table').html(rows);
+					  	console.log(response);
+					  }
+				});
+						
+						
+
+					}
+
+					$('a.profile').live('click', function(){
+						console.log("in profile");
+						header_navigation(this.className);
+					});
+
+					$('a.followup').live('click', function(){
+						console.log(active_div);
+						header_navigation(this.className);
+						console.log("in followup");
+						var rows='<p class="followup_title">Negative Followup</p><form><button class="profile_btn" type="button">Followup Email-id</button><button type="button" class="profile_btn">Branch - 5</button>'
+						rows+='<table class="followup">';
+						rows+='<tr>'
+						rows+='<th>Name</th>';
+						rows+='<th>Email-id/contact no.</th>';
+						rows+='<th>Rating</th>';
+						rows+='<th>Comment</th>';
+						rows+='<th>Status</th>';
+						rows+='<th>Customer response</th>';
+						rows+='<th>Action taken</th>';
+						rows+='</tr>';
+
+						followupRes = [{"Name":"abc","email":"mayaj@gmail.com","contact": 1234567,"rating":[{"food":2,"service":2,"ambience":2}],"comment":"service was good", "status" : "pending", "customer_response" : "abcdefg", "action_taken" : "done from our side"},
+										{"Name":"xyz","email":"indravadhanj@gmail.com","contact": 1234567,"rating":[{"food":2,"service":2,"ambience":2}],"comment":"service was good", "status" : "pending", "customer_response" : "abcdefg", "action_taken" : "done from our side"},
+										{"Name":"pqr","email":"rosheshj@gmail.com","contact": 1234567,"rating":[{"food":2,"service":2,"ambience":2}],"comment":"service was good", "status" : "pending", "customer_response" : "abcdefg", "action_taken" : "done from our side"},
+										{"Name":"lmn","email":"monishaj@gmail.com","contact": 1234567,"rating":[{"food":2,"service":2,"ambience":2}],"comment":"service was good", "status" : "pending", "customer_response" : "abcdefg", "action_taken" : "done from our side"},
+										{"Name":"ooo","email":"sahilj@gmail.com","contact": 1234567,"rating":[{"food":2,"service":2,"ambience":2}],"comment":"service was good", "status" : "pending", "customer_response" : "abcdefg", "action_taken" : "done from our side"}];
+						;
+						for(var i in followupRes){
+							rows+='<tr>'
+							rows+='<td class="profile_row">'+followupRes[i]["Name"]+'</td>';
+							rows+='<td class="profile_row">'+followupRes[i]["email"]+'</td>';
+							rows+='<td class="profile_row">'+followupRes[i]["rating"]+'</td>';
+							rows+='<td class="profile_row">'+followupRes[i]["comment"]+'</td>';
+							rows+='<td class="profile_row">'+followupRes[i]["status"]+'</td>';
+							rows+='<td class="profile_row"><textarea>'+followupRes[i]["customer_response"]+'</textarea></td>';
+							rows+='<td class="profile_row"><textarea>'+followupRes[i]["action_taken"]+'</textarea></td>';
+							rows+='</tr>';
+						}
+
+						rows+='</table></form>';
+						rows+='<div class="more_followup"> Load more followups</div>';
+						$('div#body_table').html(rows);
+
+
+						
+					});
+
+					$('a.analysis').live('click', function(){
+						console.log("in analysis");
+						header_navigation(this.className);
+					});
+
+					$('a.marketing').click(function(){
+						header_navigation(this.className);
+   						
+
+
+    });
+
+					function header_navigation(current_div)
+					{
+						document.getElementsByClassName(active_div)[0].style.backgroundColor="#00d8ff";
+						document.getElementsByClassName(active_div)[0].style.color='';
+						active_div=current_div;
+						document.getElementsByClassName(active_div)[0].style.backgroundColor='white';
+						document.getElementsByClassName(active_div)[0].style.color="#00d8ff";
+					}
 
 		
 

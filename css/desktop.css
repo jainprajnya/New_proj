@@ -130,7 +130,7 @@ background-color: Gray;
 }
 @font-face
 {
-font-family: 'myFirstFont';
+font-family: ''Roboto Condensed', "Helvetica Neue", Helvetica, Arial, sans-serif';
 /*src: url("/Library/Fonts/Corsiva.ttf");*/
 src: local('/Library/Fonts/Corsiva.ttf') format('truetype');
 }
@@ -188,7 +188,7 @@ width: 200px;
 td
 {
 padding:15px;
-font-family: 'myFirstFont';
+font-family: ''Roboto Condensed', "Helvetica Neue", Helvetica, Arial, sans-serif';
 }
 #body_table{
 
@@ -245,7 +245,7 @@ font-size: 18px;
 line-height: 24px;
 font-weight: normal;
 font-style: normal;
-font-family: myFirstFont;
+font-family: 'Roboto Condensed', "Helvetica Neue", Helvetica, Arial, sans-serif;
 width: 100%;
 height: 100%;
 position: relative;
