@@ -111,6 +111,7 @@ var graph_type;
 
 						var params_index= get_params_index(this.id,response);
 					    applyFilter=[];
+					    console.dir(params_index);
 					    graph_type=response[params_index]["type"];
 					    set_graph_level(-1);
 					    graph_name=response[params_index]["name"];
@@ -131,7 +132,7 @@ var graph_type;
 				var rows='';
 				for(var i=0;i<response.length;i++)
 					{
-						rows+='<a class="top_pannel fancy-font" style="float: center;" id='+response[i]["graphId"]+' name='+response[i]["name"]+'>'+response[i]["name"]+'</a>';
+						rows+='<li data-seek-index="0" data-seek-time="0" title="Home" class=""><span class="label" id='+response[i]["graphId"]+' name='+response[i]["name"]+'>'+response[i]["name"]+'</span><span class="dot" data-nav-item="true"><span class="inner" data-nav-item="true"></span></span></li>';
 						if (response[i]["name"]=="overview"){overview_index=i;}
 					}
 				// 	rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake1" name="fake11"> Fake1</a>';
@@ -146,7 +147,7 @@ var graph_type;
 					// rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake10" name="fake110"> Fake10</a>';
 					// rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake11" name="fake111"> Fake11</a>';
 					// rows+='<a class="top_pannel fancy-font" style="float: center;" id="fake12" name="fake112"> Fake12</a>';
-					// $('div.top_pannel_div').append(rows);			
+					$('ol.list').append(rows);			
 			}
 
 			function plot_graph(main_graph)
@@ -424,8 +425,8 @@ var graph_type;
 						console.log(filterList);
 						a = [{"a" : 1}]
 						filterList = [{"type":"non-weighted","attributeString":"sex","parentId": -1,"attributeId":3,"attributeValues":[{"name":"male","value":1,"maxValue":-1},{"name":"female","value":2,"maxValue":-1}]},
-{"type":"non-weighted","attributeString":"branch","parentId":-1,"attributeId":3,"attributeValues":[{"name":"a","value":1,"maxValue":-1},{"name":"b","value":2,"maxValue":-1},{"name":"c","value":1,"maxValue":-1}]},
-{"type":"non-weighted","attributeString":"city","parentId":-1,"attributeId":3,"attributeValues":[{"name":"male","a1":1,"maxValue":-1},{"name":"b1","value":2,"maxValue":-1}]}];
+						{"type":"non-weighted","attributeString":"branch","parentId":-1,"attributeId":3,"attributeValues":[{"name":"a","value":1,"maxValue":-1},{"name":"b","value":2,"maxValue":-1},{"name":"c","value":1,"maxValue":-1}]},
+						{"type":"non-weighted","attributeString":"city","parentId":-1,"attributeId":3,"attributeValues":[{"name":"male","a1":1,"maxValue":-1},{"name":"b1","value":2,"maxValue":-1}]}];
 						var row = document.getElementById("filter_row");
 						var filters='';
 
@@ -715,10 +716,10 @@ var graph_type;
 
 
 					function show_offers(offers){
-						var rows='<form><button class="marketing_btn" type="button">Add New Offer</button><button type="button" class="marketing_btn">Submit</button>'
+						var rows='<form><p class="followup_title">Offers</p><button class="marketing_btn" id="mrktng_add_offer" type="button">Add New Offer</button><button type="button" id="mrktng_add_submit" class="marketing_btn">Submit</button>'
 						rows+='<table class="marketing_offers">';
 						rows+='<tr>'
-						rows+='<th>Select All</th>';
+						rows+='<th><input type="checkbox">&nbsp;Select All</input></th>';
 						rows+='<th>Category</th>';
 						rows+='<th>Offer Details</th>';
 						rows+='<th>Start Date/Time</th>';
@@ -744,10 +745,10 @@ var graph_type;
 					  	for(var i in offersRes){
 					  		console.log(offersRes[i]);
 							rows+='<tr>'
-							rows+='<td class="offers_row"><input type="checkbox">Select</input></td>';
+							rows+='<td class="offers_row"><input type="checkbox">&nbsp;&nbsp;Select</input></td>';
 							rows+='<td class="offers_row">'+offersRes[i]["type"]+'</td>';
 							rows+='<td class="offers_row">'+offersRes[i]["details"]+'</td>';
-							rows+='<td class="offers_row">'+offersRes[i]["start"]+'</td>';
+							rows+='<td class="offers_row"><input id="demo1" type="text" size="25"><a href="javascript:NewCal('+"demo1"+","+"ddmmyyyy"+","+'true'+","+24+')"><img src="images/cal.gif" width="16" height="16" border="0" alt="Pick a date"></a>'+offersRes[i]["start"]+'</td>';
 							rows+='<td class="offers_row">'+offersRes[i]["end"]+'</td>';
 							rows+='<td class="offers_row">'+offersRes[i]["recurrence"]+'</td>';
 							rows+='<td class="offers_row"><img></img></textarea></td>';
@@ -763,9 +764,26 @@ var graph_type;
 
 					}
 
+					$('#mrktng_add_offer').live('click', function(){
+						rows='';
+						rows+='<tr>'
+							rows+='<td class="offers_row"><input type="checkbox">&nbsp;&nbsp;Select</input></td>';
+							rows+='<td class="offers_row">'+'type'+'</td>';
+							rows+='<td class="offers_row">'+'details'+'</td>';
+							rows+='<td class="offers_row">'+'start'+'</td>';
+							rows+='<td class="offers_row">'+'end'+'</td>';
+							rows+='<td class="offers_row">'+'recurrence'+'</td>';
+							rows+='<td class="offers_row"><img></img></textarea></td>';
+							rows+='</tr>';
+
+							$('.marketing_offers tr').last().after(rows);
+
+					});
+
 					$('a.profile').live('click', function(){
 						console.log("in profile");
 						header_navigation(this.className);
+						show_questions(response);	
 					});
 
 					$('a.followup').live('click', function(){
@@ -813,14 +831,33 @@ var graph_type;
 					$('a.analysis').live('click', function(){
 						console.log("in analysis");
 						header_navigation(this.className);
+						console.log(active_div);
+						var rows='<p class="followup_title">Analysis Results</p><form><button class="profile_btn" type="button">Month</button><button type="button" class="profile_btn">Branch - 5</button>'
+						rows+='<table class="followup">';
+						rows+='<tr>'
+						rows+='<td class="analysis_head">Service</td>';
+						rows+='<td class="analysis_comment">Between 7pm to 9 pm cuastomers say service is bad</td>';
+						rows+='</tr>';
+
+						rows+='<tr>'
+						rows+='<td class="analysis_head">Offer</td>';
+						rows+='<td class="analysis_comment">Between 11am to  1pm on weekdays 40% of your customer using buffet say food is good</td>';
+						rows+='</tr>';
+
+						rows+='<tr>'
+						rows+='<td class="analysis_head">Food</td>';
+						rows+='<td class="analysis_comment">Week1- 60% people think starters are below average</td>';
+						rows+='</tr>';
+
+						rows+='<tr>'
+						rows+='<td class="analysis_head">NPS</td>';
+						rows+='<td class="analysis_comment">Compared to last month NPS has dropped by 4%</td>';
+						rows+='</tr>';
+						
+						rows+='</table>';
+						rows+='<div class="more_followup"> Load more followups</div>';
+						$('div#body_table').html(rows);
 					});
-
-					$('a.marketing').click(function(){
-						header_navigation(this.className);
-   						
-
-
-    });
 
 					function header_navigation(current_div)
 					{
@@ -830,6 +867,57 @@ var graph_type;
 						document.getElementsByClassName(active_div)[0].style.backgroundColor='white';
 						document.getElementsByClassName(active_div)[0].style.color="#00d8ff";
 					}
+
+
+					function show_questions(questions_list){
+						var host = 'http://localhost:8080/feedback-review';
+				 // host = 'http://192.168.1.101:8080/feedback-review';
+						var graph_c = '/company';
+						var company_id = '/1';
+						var params ='/questions?callback=?'
+						var uri='';
+			
+
+					$.ajax({
+					          url: uri.concat(host,graph_c,company_id,params),
+					          dataType: 'jsonp',
+					          type: 'GET',
+					          cache: false,
+					          jsonp: 'handle_data',
+					          crossDomain:true,
+					          async:false,			        
+					          success: function( response ) {
+					          		console.dir(response);					    
+						          			       
+		    			
+					var rows='<table style="align: center;"><tr><th style="background-color: black; padding: 10px 40px; color: black; text-align: left; color: white;">Question</th><th style="background-color: white; padding: 10px 40px; color: black;text-align: left;">Answers</th></tr>';
+					for(var question in questions_list)
+					{
+						 rows+='<tr><td id='+questions_list[question]["questionId"]+'>'+questions_list[question]["question"]+'</td><td ><ul class="questions_list_main"><li id="questions_list_v"  style="visibility: block"" selected="selected">Select</li>';
+						 	for(var i=0; i<questions_list[question]["answers"].length;i++)
+						 	{
+						 		rows+='<li class="questions_list">'+questions_list[question]["answers"][i]["answer"]+'</li>'
+
+						 	}
+						 	rows+='</select></td></tr>';
+						// console.log(questions_list[question]);
+
+					}
+					rows+='</table></div>';
+					// console.log(rows);
+					$('div#body_table').append(rows);	
+
+					}
+							});			
+
+
+				}
+
+				$('li.sibling').hover(function() {
+  $(this).addClass("blue");}
+  , function() {
+  $(this).removeClass("blue");
+});
 
 		
 

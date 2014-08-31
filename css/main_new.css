@@ -4,6 +4,37 @@
 
 #sectionNav .list li:hover .dot .inner { -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); transform: scale(1); }
 #sectionNav .list li { cursor: default; display: block; position: relative; text-align: right; }
+
+
+/* ==========================================================
+   Main head
+   ========================================================== */
+.main_head_dropdown{
+position: absolute;
+background: #fff;
+/* margin-left: 5px; */
+padding: 0;
+border: 1px solid #eeeeee;
+width: 101px;
+z-index: 15;
+margin-top: 1px;
+border-top-color: white;
+list-style: none;
+}
+
+.main_head_elements{
+
+    padding-bottom: 8px;
+padding-top: 8px;
+text-align: center;
+}
+li.main_head_elements:hover{
+background-color: #00d8ff;
+}
+
+.blue{
+    background-color: white;
+}
 /* ==========================================================
     Dashboard
    ========================================================== */
@@ -130,15 +161,16 @@ table#dashboard_statistics{
    ========================================================== */
 
 table.marketing_offers{
-    background-color: white;
+    background-color: #eeeeee;
      color: black; 
      text-align: left; 
      border: 1px #eeeeee;
      margin-bottom: 20px;
+     padding-bottom: 10px;
 }
 
 table.marketing_offers th{
-    padding: 10px 40px;
+    padding: 8px 20px;
     background-color: #00d8ff; 
 
 }
@@ -218,12 +250,6 @@ table.followup td{
      
 }
 
-.active {
-    background: white;
-    /*color: #00d8ff;*/
-    
-     /*border-bottom: solid 5px #00d8ff;*/
-}
 
 .offers_row{
 padding: 10px 40px;
@@ -239,6 +265,23 @@ table.marketing_offers td{
      
 }
 
+/* ==========================================================
+    Analysis
+   ========================================================== */
+
+.analysis_head{
+padding: 10px 20px;
+background-color: white;
+width: 130px;
+height: 80px;
+}
+
+.analysis_comment{
+padding: 10px 20px;
+background-color: #00d8ff;
+width: 800px;
+height: 80px;
+}
 /* ==========================================================
     Defaults
    ========================================================== */

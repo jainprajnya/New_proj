@@ -17,6 +17,7 @@
 <script type="text/javascript" src="js/jquery-1.7.1.min.js" ></script>
 <script type="text/javascript" src="js/highcharts.js" ></script>
 <script type="text/javascript" src="js/function.js" ></script>
+<script type="text/javascript" src="js/jquery-ui-timepicker-addon.js" ></script>
 <!-- <script src="js/themes/gray.js"></script> -->
 <!-- <script type="text/javascript" src="js/themes/gray.js"></script> -->
 <!-- <script src="http://code.highcharts.com/highcharts.js"></script> -->

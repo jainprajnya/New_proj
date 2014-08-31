@@ -24,23 +24,39 @@
                         
 
                 <li class="sibling">
-                    <a href="index_new.php" class="statistics active" style="color: #00d8ff;"><span class="hover-bg"></span>Statistics</a>
+                    <a href="index_new.php" class="statistics" style="background-color: white;color: #00d8ff;"><span class="hover-bg"></span>Statistics</a>
+                    
                 </li>
 
                 <li class="sibling">
                     <a class="analysis"><span class="hover-bg"></span>Analysis</a>
+                    <ul class="main_head_dropdown" style="visibility: hidden;">
+                        <li class="main_head_elements">Assessment</li>
+                    </ul>
                 </li>
 
                 <li class="sibling">
                     <a class="marketing"><span class="hover-bg"></span>Marketing</a>
+                    <ul class="main_head_dropdown" style="visibility: hidden;" >
+                        <li class="main_head_elements">Offers</li>
+                    </ul>
                 </li>
 
                 <li class="sibling">
                     <a class="profile"><span class="hover-bg"></span>Profile</a>
+                    <ul class="main_head_dropdown" style="visibility: hidden;">
+                    <li class="main_head_elements">Questionnaire</li>
+                    <li class="main_head_elements">My Profile</li>
+                    <li class="main_head_elements">Licensing </li>
+                </ul>
                 </li>
 
                 <li class="sibling">
                     <a class="followup"><span class="hover-bg"></span>FollowUp</a>
+                    <ul class="main_head_dropdown" style="visibility: hidden;">
+                        <li class="main_head_elements">Negative Followup</li>
+                        <li class="main_head_elements">Comments</li>
+                    </ul>
                 </li>
                 <!-- <li >
                     <a href="contact.php" style="font-size: 10px; ">

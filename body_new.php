@@ -32,13 +32,19 @@
                          <table id="innerBody">
                         <tr><td><div id="container_data" style="width: 800px;"></div></td><td>
                         <nav id="sectionNav" class="clip visible" style="opacity: 1; width: 300px;">
-                <ol class="list"><li data-seek-index="0" data-seek-time="0" title="Home" class="">
-                    <span class="label">Overview</span><span class="dot" data-nav-item="true">
-                    <span class="inner" data-nav-item="true"></span></span></li>
+                <ol class="list">
+                    <!-- <li data-seek-index="0" data-seek-time="0" title="Home" class="">
+                        <span class="label">Overview</span>
+                        <span class="dot" data-nav-item="true">
+                            <span class="inner" data-nav-item="true"></span>
+                        </span>
+                    </li>
                     <li data-seek-index="1" data-seek-time="1" title="Intro" class="active">
-                        <span class="label">Trends</span><span class="dot" data-nav-item="true">
-                        <span class="inner" data-nav-item="true"></span>
-                       </span></li>
+                        <span class="label">Trends</span>
+                        <span class="dot" data-nav-item="true">
+                            <span class="inner" data-nav-item="true"></span>
+                       </span>
+                   </li> -->
         </ol>
             </nav>
         </td></tr>
